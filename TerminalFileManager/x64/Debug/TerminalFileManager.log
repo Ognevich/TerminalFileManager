@@ -1,0 +1,11 @@
+﻿  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\main.cpp(6,10): error C3083: 'filesystem': the symbol to the left of a '::' must be a type
+D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\main.cpp(6,22): error C2039: 'path': is not a member of 'std'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\iostream(19,1):
+      see declaration of 'std'
+  
+D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\main.cpp(6,22): error C2065: 'path': undeclared identifier
+D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\main.cpp(6,27): error C2146: syntax error: missing ';' before identifier 'p'
+D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\main.cpp(6,27): error C2065: 'p': undeclared identifier
+D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\main.cpp(7,18): error C2065: 'p': undeclared identifier
