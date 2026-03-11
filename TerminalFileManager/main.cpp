@@ -1,8 +1,12 @@
 #include <filesystem>
 #include <iostream>
+#include "app.hpp"
 
 int main()
 {
-    std::filesystem::path p = "test.txt";
-    std::cout << p << std::endl;
+	App app;
+
+	app.run();
+
+
 }
