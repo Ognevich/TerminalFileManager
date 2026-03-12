@@ -1,5 +1,6 @@
 #include "app.hpp"
 #include <conio.h>
+#include <iostream>
 
 #define DELAY 30
 
@@ -25,7 +26,24 @@ void App::run()
 		ui->print_main_widndow(objects,kb->get_menu_choice());
 		ui->add_delay(DELAY);
 
-		size_t pressed_key = kb->define_pressed_key();
+		size_t pressed_key = kb->get_pressed_key();
+		execute_key_action(pressed_key, objects);
+	
+	}
+
+}
+
+void App::execute_key_action(size_t pressed_key, std::vector<std::string> & objects)
+{
+	if (pressed_key == 13)
+	{
+
+		std::string new_path = objects[kb->get_menu_choice()];
+
+		fs->execute_enter(new_path);
+	}
+	else
+	{
 		kb->change_menu_choice(pressed_key, objects.size());
 	}
 

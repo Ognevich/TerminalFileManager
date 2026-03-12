@@ -6,7 +6,7 @@ KeybControl::KeybControl()
 
 }
 
-size_t KeybControl::define_pressed_key()
+size_t KeybControl::get_pressed_key()
 {
     
     int ch = _getch();
@@ -14,6 +14,7 @@ size_t KeybControl::define_pressed_key()
     if (ch == 224)
     {
         ch = _getch();
+
         return ch;
 
     }
@@ -24,11 +25,17 @@ void KeybControl::change_menu_choice(size_t kb_hit, size_t dir_size)
 {
     switch (kb_hit)
     {
-    case 72:
+    case KeybControl::KEY_UP:
         if (menu_choice > 0) menu_choice--;
         break;
-    case 80:
+    case KeybControl::KEY_DOWN:
         if (menu_choice < (dir_size-1)) menu_choice++;
+        break;
+    case KeybControl::CTRL_UP:
+        if (menu_choice > 0) menu_choice = 0;
+        break;
+    case KeybControl::CTRL_DOWN:
+        if (menu_choice <  (dir_size-1)) menu_choice = dir_size-1;
         break;
     default:
         break;

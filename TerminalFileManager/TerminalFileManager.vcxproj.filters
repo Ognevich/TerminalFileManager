@@ -33,6 +33,9 @@
     <ClCompile Include="keyb_controler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mystr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui_controler.hpp">
@@ -42,6 +45,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="keyb_controler.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mystr.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

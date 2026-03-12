@@ -132,11 +132,13 @@
     <ClCompile Include="filesystem.hpp" />
     <ClCompile Include="keyb_controler.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mystr.cpp" />
     <ClCompile Include="ui_controler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="app.hpp" />
     <ClInclude Include="keyb_controler.hpp" />
+    <ClInclude Include="mystr.hpp" />
     <ClInclude Include="ui_controler.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -8,7 +8,7 @@ public:
 
 	KeybControl();
 
-	size_t define_pressed_key();
+	size_t get_pressed_key();
 	void   change_menu_choice(size_t kb_hit, size_t dir_size);
 
 	size_t get_menu_choice();
@@ -16,6 +16,15 @@ public:
 
 private:
 	int menu_choice;
+
+	enum Key {
+		KEY_UP = 72,
+		KEY_DOWN = 80,
+		CTRL_DOWN = 145,
+		CTRL_UP = 141
+	};
+
+
 };
 
 #endif
