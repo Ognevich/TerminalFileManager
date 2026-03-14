@@ -1,12 +1,24 @@
 #include "mystr.hpp"
 #include <string.h>
 
+Mystr::Mystr()
+{
+}
+
 Mystr::Mystr(const char* symbols)
 {
 	this->size = strlen(symbols);
 	this->symbols = new char[this->size + 1];
 
 	memcpy(this->symbols, symbols, size + 1);
+}
+
+Mystr::Mystr(Mystr& other)
+{
+	this->size = other.size;
+	this->symbols = new char[this->size + 1];
+
+	memcpy(this->symbols, other.symbols, this->size + 1);
 }
 
 Mystr::~Mystr()
@@ -43,6 +55,21 @@ char Mystr::operator[](int index)
 	}
 
 	return symbols[index];
+}
+
+Mystr Mystr::operator+(const Mystr& other) const{
+	
+	Mystr new_str;
+	new_str.size = this->size + other.size;
+	new_str.symbols = new char[new_str.size + 1];
+
+	for (int i = 0; i < this->size; i++)
+		new_str.symbols[i] = this->symbols[i];
+	for (int i = 0; i < other.size; i++)
+		new_str.symbols[i + this->size] = other.symbols[i];
+
+	new_str.symbols[new_str.size] = '\0';
+	return new_str;
 }
 
 std::ostream& operator<<(std::ostream& os, const Mystr& str)

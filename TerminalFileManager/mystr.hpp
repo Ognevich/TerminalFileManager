@@ -6,14 +6,18 @@ class Mystr
 {
 public:
 
+	Mystr	();
 	Mystr	(const char * symbols);
+	Mystr	(Mystr& other);
+
 	~Mystr	();
-	// ADD copy constructor;
+	
 
 	size_t	str_size();
 
 	Mystr&  operator=(const Mystr& other);
 	char	operator[](int index);
+	Mystr	operator+(const Mystr& other) const;
 
 	friend	std::ostream& operator<<(std::ostream& os, const Mystr& str);
 
