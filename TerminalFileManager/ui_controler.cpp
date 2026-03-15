@@ -4,7 +4,7 @@
 #include <thread>
 #include <chrono>
 
-void UIControler::print_main_widndow(const std::vector<std::string>& objects, int menu_choice)
+void UIControler::print_widndow(const std::vector<std::string>& objects, int menu_choice)
 {
 	for (size_t i = 0; i < objects.size(); i++)
 	{
@@ -20,9 +20,14 @@ void UIControler::print_main_widndow(const std::vector<std::string>& objects, in
 
 }
 
-void UIControler::clear_screen()
+void UIControler::cursor_home()
 {
 	std::cout << "\033[H";
+}
+
+void UIControler::clear_screen()
+{
+	std::cout << "\033[2J";
 }
 
 void UIControler::add_delay(int delay_ms)

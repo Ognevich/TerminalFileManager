@@ -1,6 +1,14 @@
-﻿  main.cpp
+﻿  app.cpp
+D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\app.cpp(27,59): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  filesystem.cpp
+  filesystem.hpp
+  keyb_controler.cpp
+D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\keyb_controler.cpp(38,64): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\keyb_controler.cpp(53,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
   mystr.cpp
 D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\mystr.cpp(10,21): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  ui_controler.cpp
   Generating Code...
 x64\Debug\filesystem.obj : warning LNK4042: object specified more than once; extras ignored
   TerminalFileManager.vcxproj -> D:\my_projects\c++\Projects\TerminalFileManager\x64\Debug\TerminalFileManager.exe

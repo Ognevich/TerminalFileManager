@@ -10,12 +10,17 @@ class Filesystem {
 public:
 
     Filesystem();
-    std::vector<std::string>    get_current_objects();
-    bool                        execute_enter(std::string new_path);
+    std::vector<std::string>    get_objects();
+    void                        set_objects(std::filesystem::path path);
+    void                        clear_objects();
+    std::filesystem::path       get_current_path();
+    bool                        set_current_path(const std::string& new_path);
 
 
 private:
-    std::filesystem::path current_path;
+
+    std::vector<std::string>    objects;
+    std::filesystem::path       current_path;
 };
 
 #endif

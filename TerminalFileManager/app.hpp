@@ -17,7 +17,7 @@ public:
 
 private:
 
-	void execute_key_action(size_t pressed_key, std::vector<std::string>& objects);
+	void execute_key_action(size_t pressed_key);
 
 	std::unique_ptr<UIControler> ui;
 	std::unique_ptr<Filesystem> fs;
