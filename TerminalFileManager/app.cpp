@@ -38,22 +38,34 @@ void App::execute_key_action(size_t pressed_key)
 {
 	std::vector<std::string> objects = fs->get_objects();
 
-	if (pressed_key == 13)
-	{
+	// CHANGE SYSTEM TO VECTORS AND ITERATORS VIA LIST
 
+	switch (pressed_key) {
+	case 13:
+	{
 		std::string new_path = objects[kb->get_menu_choice()];
 		bool res = fs->set_current_path(new_path);
-		
+
 		if (res)
 		{
 			kb->set_menu_choice(0);
 			ui->clear_screen();
 		}
-
 	}
-	else
+	case 8:
+	{
+		ui->clear_screen();
+		ui->print_help_window();
+		_getch();
+	}
+	default:
 	{
 		kb->change_menu_choice(pressed_key, objects.size());
+		break;
+
 	}
+	}
+
+
 
 }

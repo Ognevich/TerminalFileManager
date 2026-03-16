@@ -10,7 +10,10 @@ void UIControler::print_widndow(const std::vector<std::string>& objects, int men
 	{
 		if (menu_choice == i)
 		{
-			std::cout << "[#]  " << objects[i] << "\n";
+			std::cout << "\033[30;47m";
+			std::cout << "[#]  " << objects[i];
+			std::cout << "\033[0m";
+			std::cout << "\n";
 		}
 		else
 		{
@@ -18,6 +21,15 @@ void UIControler::print_widndow(const std::vector<std::string>& objects, int men
 		}
 	}
 
+}
+
+void UIControler::print_help_window()
+{
+	std::cout << "[ENTER] - Open directory";
+	std::cout << "[CTRL-ARROW_DOWN] - Move to the end of objects\n";
+	std::cout << "[CTRL-ARROW_UP] - Move to the begin of objects\n\n\n";
+
+	std::cout << "press any button to exit...\n";
 }
 
 void UIControler::cursor_home()
