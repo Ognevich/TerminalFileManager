@@ -141,6 +141,9 @@
     <ClInclude Include="mystr.hpp" />
     <ClInclude Include="ui_controler.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="tech_task.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

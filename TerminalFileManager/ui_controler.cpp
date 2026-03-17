@@ -25,11 +25,18 @@ void UIControler::print_widndow(const std::vector<std::string>& objects, int men
 
 void UIControler::print_help_window()
 {
-	std::cout << "[ENTER] - Open directory";
+	std::cout << "[ENTER] - Open directory\n";
 	std::cout << "[CTRL-ARROW_DOWN] - Move to the end of objects\n";
 	std::cout << "[CTRL-ARROW_UP] - Move to the begin of objects\n\n\n";
 
-	std::cout << "press any button to exit...\n";
+	std::cout << "press esc button to exit...\n";
+}
+
+void UIControler::execute_help_window()
+{
+	clear_screen();
+	cursor_home();
+	print_help_window();
 }
 
 void UIControler::cursor_home()
@@ -40,6 +47,11 @@ void UIControler::cursor_home()
 void UIControler::clear_screen()
 {
 	std::cout << "\033[2J";
+}
+
+void UIControler::full_clear_screen()
+{
+	std::system("cls");
 }
 
 void UIControler::add_delay(int delay_ms)

@@ -12,6 +12,11 @@ std::vector<std::string> Filesystem::get_objects()
     return this->objects;
 }
 
+size_t Filesystem::get_objects_size()
+{
+    return this->objects.size();
+}
+
 void Filesystem::set_objects(std::filesystem::path path)
 {   
     clear_objects();
@@ -39,17 +44,9 @@ std::filesystem::path Filesystem::get_current_path()
 }
 
 
-bool Filesystem::set_current_path(const std::string& new_path)
+void Filesystem::set_current_path(const std::string& new_path)
 {
-    try {
-        std::filesystem::path path_obj(new_path);  
-        std::filesystem::current_path(path_obj);  
-        this->current_path = std::filesystem::current_path(); 
-        return true;
-    }
-    catch (const std::filesystem::filesystem_error& e) {
-        std::cerr << "Error changing path: " << e.what() << '\n';
-        return false;
-    }
-    return true;
+    std::filesystem::path path_obj(new_path);  
+    std::filesystem::current_path(path_obj);  
+    this->current_path = std::filesystem::current_path(); 
 }
