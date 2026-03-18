@@ -56,10 +56,7 @@ void App::setup_keybindings()
 
 		if (std::filesystem::is_directory(new_path))
 		{
-			fs->set_current_path(new_path);
-
-			kb->set_menu_choice(0);
-			ui->clear_screen();
+			execute_open_file(new_path);
 		}
 		else if (std::filesystem::is_regular_file(new_path))
 		{
@@ -116,4 +113,12 @@ void App::view_file(std::string filepath)
 	kb->wait_for_esc();
 
 	ui->clear_screen();
+}
+
+void App::execute_open_file(std::string new_path)
+{
+	fs->set_current_path(new_path);
+
+	kb->set_menu_choice(0);
+	ui->full_clear_screen();
 }

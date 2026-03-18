@@ -23,6 +23,7 @@ private:
 	void		setup_keybindings();
 
 	void		view_file(std::string filepath);
+	void		execute_open_file(std::string new_path);
 
 	bool		_is_active;
 

@@ -1,7 +1,6 @@
 ﻿  app.cpp
 D:\my_projects\c++\Projects\TerminalFileManager\TerminalFileManager\app.cpp(29,59): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   main.cpp
-  ui_controler.cpp
   Generating Code...
 x64\Debug\filesystem.obj : warning LNK4042: object specified more than once; extras ignored
   TerminalFileManager.vcxproj -> D:\my_projects\c++\Projects\TerminalFileManager\x64\Debug\TerminalFileManager.exe
