@@ -18,8 +18,11 @@ public:
     std::filesystem::path       get_current_path();
     void                        set_current_path(const std::string& new_path);
 
+    bool                        is_filename_forbidden(const std::string& filename);
 
 private:
+
+    std::vector<std::string>    forbiden_ext;
 
     std::vector<std::string>    objects;
     std::filesystem::path       current_path;

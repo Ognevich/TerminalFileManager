@@ -3,8 +3,10 @@
 
 Filesystem::Filesystem()
     : current_path(std::filesystem::current_path()),
-    objects({})
+    objects({}),
+    forbiden_ext({".obj", ".exe", ".dll"})
 {
+
 }
 
 std::vector<std::string> Filesystem::get_objects()
@@ -49,4 +51,14 @@ void Filesystem::set_current_path(const std::string& new_path)
     std::filesystem::path path_obj(new_path);  
     std::filesystem::current_path(path_obj);  
     this->current_path = std::filesystem::current_path(); 
+}
+
+bool Filesystem::is_filename_forbidden(const std::string& filename)
+{
+    for (const auto& ext : forbiden_ext)
+    {
+        if (filename.find(ext) != std::string::npos)
+            return true;
+    }
+    return false;
 }

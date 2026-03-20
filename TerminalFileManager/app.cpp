@@ -99,6 +99,11 @@ void App::view_file(std::string filepath)
 		std::cerr << "Cannot open file: " << filepath << "\n";
 		return;
 	}
+	if (fs->is_filename_forbidden(filepath))
+	{
+		std::cout << "Cannot open file " << filepath << "\n";
+		return;
+	}
 
 	ui->full_clear_screen();
 	ui->cursor_home();
