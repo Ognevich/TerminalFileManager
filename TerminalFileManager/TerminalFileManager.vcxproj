@@ -134,12 +134,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mystr.cpp" />
     <ClCompile Include="ui_controler.cpp" />
+    <ClCompile Include="win_console_handler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="app.hpp" />
     <ClInclude Include="keyb_controler.hpp" />
     <ClInclude Include="mystr.hpp" />
     <ClInclude Include="ui_controler.hpp" />
+    <ClInclude Include="win_console_handler.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="tech_task.txt" />

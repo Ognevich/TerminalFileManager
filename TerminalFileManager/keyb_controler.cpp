@@ -52,6 +52,19 @@ void KeybControl::ctrl_move_down(size_t dir_size)
     if (menu_choice < (dir_size - 1)) menu_choice = dir_size - 1;
 }
 
+std::string KeybControl::get_console_row()
+{
+    char ch;
+    std::string filename;
+
+    while ((ch = _getch()) != '\r')
+    {
+        filename += ch;
+        std::cout << ch;
+    }
+    return filename;
+}
+
 void KeybControl::wait_for_esc()
 {
     size_t pressed;

@@ -36,6 +36,9 @@
     <ClCompile Include="mystr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="win_console_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui_controler.hpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="mystr.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="win_console_handler.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

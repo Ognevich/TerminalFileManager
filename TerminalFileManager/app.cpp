@@ -64,6 +64,11 @@ void App::setup_keybindings()
 		}
 	};
 
+	key_actions[KEYB_SHORTCUTS::CTRL_L] = [this]() {
+		ui->full_clear_screen();
+	};
+
+
 	key_actions[KEYB_SHORTCUTS::F1] = [this]() {
 		ui->execute_help_window();
 		kb->wait_for_esc();
@@ -84,6 +89,14 @@ void App::setup_keybindings()
 
 	key_actions[KEYB_SHORTCUTS::CTR_ARR_DOWN] = [this]() {
 		kb->ctrl_move_down(fs->get_objects_size());
+	};
+
+	key_actions[KEYB_SHORTCUTS::n_KEY] = [this]() {
+		execute_create_file();
+	};
+
+	key_actions[KEYB_SHORTCUTS::N_KEY] = [this]() {
+
 	};
 
 	key_actions[KEYB_SHORTCUTS::Q_EXIT] = [this]() {
@@ -126,4 +139,22 @@ void App::execute_open_file(std::string new_path)
 
 	kb->set_menu_choice(0);
 	ui->full_clear_screen();
+}
+
+void App::execute_create_file()
+{
+	std::cout << "Enter filename: ";
+
+	std::string filename = kb->get_console_row();
+
+	std::cout << "\n";
+
+	if (fs->is_filename_forbidden(filename))
+	{
+		std::cout << "A file with that name cannot be created\n";
+		return;
+	}
+	fs->create_file(filename);
+	ui->full_clear_screen();
+
 }

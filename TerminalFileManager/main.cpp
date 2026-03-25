@@ -2,16 +2,14 @@
 #include <iostream>
 #include "app.hpp"
 #include "mystr.hpp"
+#include "win_console_handler.hpp"
 
 int main()
 {
 	App app;
 
-	//Mystr str1 = "123";
-	//Mystr str2 = "456";
-	//Mystr str3 = str1 + str2;
-
-	//std::cout << str3;
+	HANDLE hIn = GetStdHandle(STD_INPUT_HANDLE);
+	WinConsoleHandler guard(hIn);
 
 	app.run();
 

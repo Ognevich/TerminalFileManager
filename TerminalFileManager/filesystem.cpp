@@ -1,5 +1,7 @@
 #include "filesystem.hpp"
 #include <iostream>
+#include <conio.h>
+#include <fstream>
 
 Filesystem::Filesystem()
     : current_path(std::filesystem::current_path()),
@@ -55,10 +57,33 @@ void Filesystem::set_current_path(const std::string& new_path)
 
 bool Filesystem::is_filename_forbidden(const std::string& filename)
 {
+    if (filename.empty())
+        return true;
+
     for (const auto& ext : forbiden_ext)
     {
         if (filename.find(ext) != std::string::npos)
             return true;
     }
     return false;
+}
+
+void Filesystem::create_file(std::string filename)
+{
+    if (std::filesystem::exists(filename))
+    {
+        std::cout << "File already exists\n";
+        return;
+    }
+
+    std::ofstream file(filename);
+
+    if (!file)
+    {
+        std::cout << "Failed to create file\n";
+        return;
+    }
+
+    std::cout << "File" << filename << "created\n";
+   
 }

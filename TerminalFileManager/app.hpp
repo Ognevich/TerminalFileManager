@@ -13,8 +13,6 @@ public:
 
 	App();
 
-
-
 	void run();
 
 private:
@@ -24,6 +22,8 @@ private:
 
 	void		view_file(std::string filepath);
 	void		execute_open_file(std::string new_path);
+
+	void        execute_create_file();
 
 	bool		_is_active;
 

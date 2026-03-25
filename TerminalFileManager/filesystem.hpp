@@ -20,6 +20,8 @@ public:
 
     bool                        is_filename_forbidden(const std::string& filename);
 
+    void                        create_file(std::string filename);
+
 private:
 
     std::vector<std::string>    forbiden_ext;
@@ -27,5 +29,6 @@ private:
     std::vector<std::string>    objects;
     std::filesystem::path       current_path;
 };
+
 
 #endif
